@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  angular:
+    build:
+      context: ./angular
+      dockerfile: Dockerfile
+    image: angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./angular:/app
+      - /app/node_modules
+    network_mode: host
